@@ -1,0 +1,24 @@
+{
+    "codebasePath": "/Users/satyamanand/Downloads/gumlet",
+    "collection": "code_chunks",
+    "embedModel": "nomic-embed-text",
+    "llmModel": "qwen2.5-coder:7b",
+    "include": [
+        "**/*.{ts,tsx,js,jsx,py,go,rb,java,cs,php}",
+        "**/*.{md,txt,json,yml,yaml}"
+    ],
+    "exclude": [
+        "node_modules/**",
+        ".git/**",
+        "dist/**",
+        "build/**",
+        "**/*.min.*",
+        "**/*.lock"
+    ],
+    "maxFileBytes": 200000,
+    "chunk": {
+        "lines": 120,
+        "overlap": 20
+    },
+    "dryRun": true
+}
