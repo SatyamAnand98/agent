@@ -50,8 +50,7 @@ all-minilm:latest           45 MB   # optional lightweight embedder
 Clone your repo and the agent:
 
 ```bash
-git clone https://github.com/your-org/your-repo.git ~/Downloads/gumlet
-git clone https://github.com/your-org/local-code-agent.git ~/Downloads/agentTest/agent
+git clone https://github.com/SatyamAnand98/agent ~/Downloads/agentTest/agent
 cd ~/Downloads/agentTest/agent
 npm install
 ```
