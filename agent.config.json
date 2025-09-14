@@ -1,5 +1,5 @@
 {
-    "codebasePath": "/Users/satyamanand/Downloads/gumlet",
+    "codebasePath": "/Users/apple/Downloads/gumlet",
     "collection": "code_chunks",
     "embedModel": "nomic-embed-text",
     "llmModel": "qwen2.5-coder:7b",

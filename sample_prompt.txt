@@ -1,0 +1,52 @@
+jira:
+topic: Webhook event summaries
+description: Summarize what each event means.
+prompt: >
+  Give me short descriptions for each webhook event:
+  video.status.created
+  video.status.downloaded
+  video.status.optimized
+  video.status.ready
+  video.status.errored
+  video.status.deleted
+  video.status.repackaged
+  video.status.stream_ready
+  live.video.status.created
+  live.video.status.ready
+  live.video.status.preparing
+  live.video.status.connected
+  live.video.status.active
+  live.video.status.complete
+  live.video.status.disconnected
+  event.embed.viewed
+  event.embed.cta_clicked
+  event.video.updated
+  event.video.uploaded
+  event.playlist.created
+  event.playlist.asset
+  event.video.analytics
+  event.image.analytics
+
+
+jira: https://gumlet.atlassian.net/browse/GUM-1866?
+topic: IOriver cache purge for image & Video
+description: add cache purging for image & video using https://www.ioriver.io/docs/api/purge/
+chat:
+  - 
+prompt: >
+  Implement cache purging for image and video using io river
+   1) purge cache
+
+
+Go through the requirements below and analyze to give me the code that I need to add/ change along with the file. 
+NOTE: all the endpoints has to be created in gumlet-api repository
+  1. Build API for:
+    1.1. Clear all invoices and switch them to free plan -> for any non enterprise plan user
+    1.2. unblock account temporarily for x days.
+      - API takes x days
+      - checks if the organization's unpaid is false in mongodb, mark a new flag which stores the timestamp at which the account can be blocked (after x days)
+      - since organization's unpaid is synced with stripe, stripe can update unpaid as true only after the timestamp and reset the timestamp
+  2. See if we can handle trial ending case -> mark the user on trial will end, next day switch to free plan via new cron. Reset this flag if trial got extended.
+    - When the trial is about to end, we get notification few days before.
+    - mark a flag that will mention that the trial is about to end.
+    - next day, run a cron that will switch the user to free plan and reset the trial flag
